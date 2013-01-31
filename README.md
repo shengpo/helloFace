@@ -13,6 +13,12 @@ Functions:
 
 How to install:
 ---------------
+* install OpenCV 2 on your platform ([reference](http://codeanticode.wordpress.com/2011/11/21/opencv-2-in-processing/))
+	* windows
+	* Mac ([中文參考](http://shenshengpo.blogspot.tw/2013/01/macprocessing-opencv-2.html))
+	* Linux ([中文參考](http://shenshengpo.blogspot.tw/2013/01/ubuntu-processing-opencv-2.html))
+
+
 //... to be continued
 
 
