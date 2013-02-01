@@ -3,6 +3,11 @@ This is the place for Processing source code
 **helloFace** folder is a Processing sketch folder.
 
 
+Instruction:
+------------
+- 按s/S鍵, 可以switch on/off 設定面板
+	- 可選擇/設定camera參數
+
 
 TODO list:
 ------------
