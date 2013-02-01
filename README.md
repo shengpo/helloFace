@@ -13,6 +13,8 @@ Functions:
 
 How to install:
 ---------------
+* install GStreamer framework on your platform ([reference](http://wiki.processing.org/w/Video_Issues))
+	* make sure that you can run video-related examples in Processing 2.x (if you can, that means you install GStreamer framework already.)
 * install OpenCV 2 on your platform ([reference](http://codeanticode.wordpress.com/2011/11/21/opencv-2-in-processing/))
 	* windows
 	* Mac ([中文參考](http://shenshengpo.blogspot.tw/2013/01/macprocessing-opencv-2.html))
@@ -20,6 +22,11 @@ How to install:
 
 
 //... to be continued
+
+
+Tech:
+-----
+***helloFace*** uses GStreamer framework to capture live camera video, and then uses OpenCV 2 to do face-detection.
 
 
 Built with:
