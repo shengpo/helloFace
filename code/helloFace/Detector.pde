@@ -35,7 +35,7 @@ public class Detector {
         //...
                 
         //send out OSC messages
-        sendOutOSC();       
+        if(oscHandler != null)    oscHandler.sendOut(faceRect);
          
         //show final result with/out visual info
         if(isShowVisualInfo){
@@ -58,10 +58,5 @@ public class Detector {
     
     public void switchOnOffVisualInfo(){
         isShowVisualInfo = !isShowVisualInfo;
-    }
-    
-    
-    private void sendOutOSC(){
-        //...
     }
 }

@@ -60,6 +60,9 @@ CamProperties camProperties = null;
 //for detector
 Detector detector = null;
 
+//for OSC handler
+OSCHandler oscHandler = null;
+
 //for garbage collector
 GarbageCollector gc = null;
 float gcPeriodMinute = 5;    //設定幾分鐘做一次gc
@@ -81,6 +84,9 @@ void setup() {
     
     //for info panel
     infoPanel = new InfoPanel(viewPanelWidth);
+
+    //for OSC handler
+    oscHandler = new OSCHandler(this);
     
     //for garbage collector
     gc = new GarbageCollector(gcPeriodMinute);
