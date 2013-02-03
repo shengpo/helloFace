@@ -17,7 +17,7 @@ void controlEvent(ControlEvent theEvent) {
                 
                 //for detector
                 detector = null;    //漆除之前的detector
-                detector = new Detector(camProperties.getCamWidth(), camProperties.getCamHeight());
+                detector = new Detector(this, camProperties.getCamWidth(), camProperties.getCamHeight());
                 println("[INFO] detector initialized !");
             }
         }

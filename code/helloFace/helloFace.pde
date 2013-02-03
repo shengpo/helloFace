@@ -13,6 +13,7 @@
  ----------------
  * 按s/S鍵, 可以switch on/off 設定面板
  * 按i/I鍵, 可以switch on/off 資訊面板
+ * 按v/IV, 可以switch on/off 偵測到的視覺資訊
  
  
  Used libraries:
@@ -38,6 +39,7 @@ import monclubelec.javacvPro.*;
 import controlP5.*;
 import oscP5.*;
 import netP5.*;
+import java.awt.*;
 
 
 //for view panel
@@ -133,5 +135,10 @@ void keyPressed(){
     //switch on/off info panel
     if(key=='i' || key=='I'){
         if(infoPanel != null)    infoPanel.switchOnOff();
+    }
+
+    //switch on/off detecting-visual-info    
+    if(key=='v' || key=='V'){
+        if(detector != null)    detector.switchOnOffVisualInfo();
     }
 }
