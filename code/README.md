@@ -8,6 +8,7 @@ Instruction:
 - 按s/S鍵, 可以switch on/off 設定面板
 	- 可選擇/設定camera參數
 - 按i/I鍵, 可以switch on/off 資訊面板
+- 按v/IV, 可以switch on/off 偵測到的視覺資訊
 
 
 
@@ -19,5 +20,8 @@ TODO list:
 [-] 增加infoPanel, 放在viewPanel上，顯示一些資訊
 	- 主要是當setting panel收起來時，提供一些資訊
 	- 例如：目前所選擇的camera parameters
-[ ] face-detection
+[x] face-detection
+[ ] other opencv detection?
+[ ] OSC送出
+[ ] OSC接收
 [ ] 本程式操作/使用說明
