@@ -11,7 +11,10 @@ Instruction:
 
 TODO list:
 ------------
-- setting panel能左右伸縮: 
+[x] setting panel能左右伸縮: 
 	- 向右伸長後, 長出設定選項, 進入設定模式
 	- 向左縮回後，便結束設定模式
-- 本程式操作/使用說明
+[ ] 增加infoPanel, 放在viewPanel上，顯示一些資訊
+	- 主要是當setting panel收起來時，提供一些資訊
+	- 例如：目前所選擇的camera parameters
+[ ] 本程式操作/使用說明
