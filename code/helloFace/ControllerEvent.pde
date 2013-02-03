@@ -7,10 +7,10 @@ void controlEvent(ControlEvent theEvent) {
 
         //DropdownList: cameraList
         if(theEvent.getName().equals("cameraList")){
-            String[] cams = camProperties.getAvailableList();
-            if(cams != null){
+            String[] camlist = camProperties.getAvailableList();
+            if(camlist != null){
                 if(cam != null)    cam.stop();    //先停止之前選擇的camera
-                camProperties.setCamera(cams[(int)theEvent.getValue()]);    //設定目前選的camera parameters
+                camProperties.setCamera(camlist[(int)theEvent.getValue()]);    //設定目前選的camera parameters (紀錄parameter中的各個項目)
                 cam = new Capture(this, camProperties.getSelectedCamera());    //產生新的camera
                 cam.start();    //啟動
                 println("[INFO] camera initialized !");

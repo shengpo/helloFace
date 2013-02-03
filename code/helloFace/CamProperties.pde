@@ -1,6 +1,8 @@
 public class CamProperties {
     private String[] cameras = null;            //紀錄可使用的camera列表    
-    private String selectedCamera = "";     //紀錄被選取的camera
+    private String selectedCamera = "";     //紀錄被選取的camera參數設定
+    
+    //camera參數項目
     private String camName = "";              //camera的名字
     private int camWidth = 0;                    //width of camera's resolution
     private int camHeight = 0;                  //height of camera's resolution
@@ -15,13 +17,15 @@ public class CamProperties {
     
     public String[] getAvailableList(){
         if (cameras.length == 0) {
-            println("There are no cameras available for capture.");
+            println("[INFO] There are no cameras available for capture.");
             return null;
         } else {
-            println("Available cameras:");
+            println("[INFO] Available cameras:");
+            println("-----------------------------");
             for (int i = 0; i < cameras.length; i++) {
                 println(cameras[i]);
             }
+            println("-----------------------------");
             return cameras;
         }      
     }
@@ -45,6 +49,7 @@ public class CamProperties {
             }
         }
         
+        println("[INFO] selected camera parameter's items: ");
         println("camera name : " + camName);
         println("camera resolution : " + camWidth + " x " + camHeight);
         println("camera fps : " + fps);

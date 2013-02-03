@@ -12,6 +12,8 @@
  Instruction:
  ----------------
  * 按s/S鍵, 可以switch on/off 設定面板
+ * 按i/I鍵, 可以switch on/off 資訊面板
+ 
  
  Used libraries:
  ---------------------
@@ -46,6 +48,9 @@ int viewPanelHeight = 300;
 SettingPanel settingPanel = null;
 int settingPanelWidth = 400;
 
+//for info panel
+InfoPanel infoPanel = null;
+
 //for camera
 Capture cam = null;
 CamProperties camProperties = null;
@@ -72,16 +77,9 @@ void setup() {
     //for setting panel
     settingPanel = new SettingPanel(this, settingPanelWidth);
     
-//    String[] cams = camProperties.getAvailableList();
-//    if(cams != null){
-//        camProperties.setCamera(cams[0]);
-//        cam = new Capture(this, camProperties.getSelectedCamera());
-//        cam.start();
-//        
-//        //for detector
-//        detector = new Detector(camProperties.getCamWidth(), camProperties.getCamHeight());
-//    }
-
+    //for info panel
+    infoPanel = new InfoPanel(viewPanelWidth);
+    
     //for garbage collector
     gc = new GarbageCollector(gcPeriodMinute);
     gc.start();
@@ -91,21 +89,28 @@ void setup() {
 void draw() {
     background(0);
 
+    //read-in camera video
     if (cam!=null && cam.available()) {
         cam.read();
     }
 
+    //do detecting
     if(detector != null){
+        //將detect的結果秀出來
         showImage(detector.doDetect(cam));
     }else{
+        //直接秀camera影像，不做detect
         showImage(cam);
     }
+    
+    //show verbose info
+    infoPanel.show();
 }
 
 
 void showImage(PImage img){
     if(img != null){
-        //this way has a bug in Processing2.0b7
+        //resize() has a bug in Processing2.0b7
         //img.resize(viewPanelWidth, 0); 
         //image(img, 0, (viewPanelHeight-img.height)/2);
         
@@ -120,7 +125,13 @@ void showImage(PImage img){
 
 
 void keyPressed(){
+    //switch on/off setting panel
     if(key=='s' || key=='S'){
         if(settingPanel != null)    settingPanel.switchOnOff();
+    }
+
+    //switch on/off info panel
+    if(key=='i' || key=='I'){
+        if(infoPanel != null)    infoPanel.switchOnOff();
     }
 }

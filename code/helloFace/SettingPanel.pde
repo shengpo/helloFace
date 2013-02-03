@@ -32,21 +32,24 @@ public class SettingPanel {
     private void setControllers(){
         /*DropdownList for camera list*/
         dropdownList = cp5.addDropdownList("cameraList")
-                               .setSize(200, 100)
+                               .setSize(250, 100)
                                .setPosition(viewPanelWidth+50, 50)
                                .setBackgroundColor(color(190))
                                .setColorBackground(color(60))
                                .setColorActive(color(255, 128))
-                               .setItemHeight(20)
-                               .setBarHeight(15);
+                               .setItemHeight(25)
+                               .setBarHeight(20)
+                               .setScrollbarWidth(10);
         dropdownList.captionLabel().set("camera list");
-        dropdownList.captionLabel().style().marginTop = 3;
-        dropdownList.captionLabel().style().marginLeft = 3;
-        dropdownList.valueLabel().style().marginTop = 3;
+        dropdownList.captionLabel().style().marginTop = 5;
+        dropdownList.captionLabel().style().marginLeft = 5;
+        dropdownList.valueLabel().style().marginTop = 5;
         //add camera list items
         String[] cams = camProperties.getAvailableList();
-        for(int i=0; i<cams.length; i++){
-            dropdownList.addItem(cams[i], i);
+        if(cams != null){
+            for(int i=0; i<cams.length; i++){
+                dropdownList.addItem(cams[i], i);
+            }
         }
     }
 }
