@@ -22,6 +22,7 @@ TODO list:
 	- 例如：目前所選擇的camera parameters
 [x] face-detection
 [ ] other opencv detection?
+[ ] OSC可設定remote address, 本程式local端osc port
 [ ] OSC送出
 [ ] OSC接收
 [ ] 本程式操作/使用說明
