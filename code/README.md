@@ -11,6 +11,15 @@ Instruction:
 - 按v/IV, 可以switch on/off 偵測到的視覺資訊
 
 
+OSC message (send out):
+-----------------------
+- 人臉偵測的OSC message
+	- address pattern : `/faceDetect`
+	- type tag: `is`
+		- i: 表示偵測到的人臉數量
+		- s: 偵測到的人臉範圍串列, 格式為 `x=0,y=0,w=30,h=30|x=10,y=10,w=60,h=60|...`（以此類推），每個人臉範圍以符號 **|** 相隔開, 每個人臉範圍(為一個矩型)由4個數值構成: x表示矩型的左上角x座標, y表示矩型的左上角y座標, w表示矩型的寬度, h表示矩型的高度
+	- 範例: `/faceDetect 2 x=310,y=166,w=149,h=149|x=314 | y=149 | w=159 | h=159`
+
 
 TODO list:
 ------------
