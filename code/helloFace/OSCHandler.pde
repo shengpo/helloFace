@@ -17,7 +17,7 @@ public class OSCHandler {
         oscP5 = new OscP5(papplet, localOscPort);
         myRemoteLocation = new NetAddress(remoteAddress, remoteOscPort);
         
-        //add plugs (plug to this object's function!)
+        //add plugs (plug to this object's function!) for receive OSC message from outside
         oscP5.plug(this, "test", "/test");
     }
     
@@ -41,6 +41,17 @@ public class OSCHandler {
             myMessage.add(facelist);    //偵測到的face矩型數據串
             oscP5.send(myMessage, myRemoteLocation); 
         }
+    }
+    
+    
+    public int getLocalOscPort(){
+        return localOscPort;
+    }
+    public String getRemoteAddress(){
+        return remoteAddress;
+    }
+    public int getRemoteOscPort(){
+        return remoteOscPort;
     }
     
 

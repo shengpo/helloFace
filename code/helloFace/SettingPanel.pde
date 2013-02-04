@@ -7,6 +7,7 @@ public class SettingPanel {
     private ControlP5 cp5;
     private DropdownList dropdownList;
     
+
     
     public SettingPanel(PApplet papplet, int width){
         this.papplet = papplet;
@@ -31,7 +32,7 @@ public class SettingPanel {
     
     private void setControllers(){
         /*DropdownList for camera list*/
-        dropdownList = cp5.addDropdownList("cameraList")
+        dropdownList = cp5.addDropdownList("cameraDropdownList")
                                .setSize(250, 100)
                                .setPosition(viewPanelWidth+50, 50)
                                .setBackgroundColor(color(190))
@@ -51,5 +52,50 @@ public class SettingPanel {
                 dropdownList.addItem(cams[i], i);
             }
         }
+        
+        /*local OSC port setting*/
+        cp5.addTextfield("localOscPortTextfield")
+             .setCaptionLabel("local OSC port")
+             .setPosition(viewPanelWidth+50, 150)
+             .setSize(50, 15)
+             .setColorBackground(color(60))
+             .setInputFilter(Textfield.INTEGER)
+             .setFont(infoFont);
+        
+        /*remote address setting*/
+        cp5.addTextfield("remoteAddressTextfield")
+             .setCaptionLabel("remote address")
+             .setPosition(viewPanelWidth+200, 150)
+             .setSize(100, 15)
+             .setColorBackground(color(60))
+             .setFont(infoFont);
+
+        /*remote OSC port setting*/
+        cp5.addTextfield("remoteOscPortTextfield")
+             .setCaptionLabel("remote OSC port")
+             .setPosition(viewPanelWidth+310, 150)
+             .setSize(50, 15)
+             .setColorBackground(color(60))
+             .setInputFilter(Textfield.INTEGER)
+             .setFont(infoFont);
+        
+        /*build OSC connection*/
+        cp5.addBang("connectBang")
+             .setCaptionLabel("build    OSC    connection")
+             .setPosition(viewPanelWidth+50, 185)
+             .setSize(330, 20)
+             .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
+             
+        /*osc connection info*/
+        cp5.addTextfield("oscConnectionInfoTextfield")
+             .setCaptionLabel("OSC    connection    not    build")
+             .setPosition(viewPanelWidth+50, 210)
+             .setSize(330, 15)
+             .setColorForeground(color(100))
+             .setColorBackground(color(0))
+             .setColorCaptionLabel(color(200, 0, 0))
+             .setFont(infoFont)
+             .setLock(true)
+             .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
     }
 }

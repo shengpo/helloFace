@@ -6,7 +6,7 @@ void controlEvent(ControlEvent theEvent) {
         println("event from group : "+theEvent.getGroup().getValue()+" from "+theEvent.getGroup());
 
         //DropdownList: cameraList
-        if(theEvent.getName().equals("cameraList")){
+        if(theEvent.getName().equals("cameraDropdownList")){
             String[] camlist = camProperties.getAvailableList();
             if(camlist != null){
                 if(cam != null)    cam.stop();    //先停止之前選擇的camera

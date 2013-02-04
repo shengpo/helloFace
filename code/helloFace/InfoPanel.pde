@@ -1,14 +1,10 @@
 public class InfoPanel {
     private int width = 100;    //width of info panel
     private boolean isShowInfo = false;
-    private int fontSize = 12;
 
     
     public InfoPanel(int width){
         this.width = width;
-
-        PFont myFont = createFont("Georgia", fontSize);
-        textFont(myFont);
     }
     
     public void show(){

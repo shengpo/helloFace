@@ -63,6 +63,10 @@ Detector detector = null;
 //for OSC handler
 OSCHandler oscHandler = null;
 
+//for font (used in InfoPanel, SettingPanel)
+PFont infoFont = null;
+int fontSize = 12;
+
 //for garbage collector
 GarbageCollector gc = null;
 float gcPeriodMinute = 5;    //設定幾分鐘做一次gc
@@ -75,6 +79,10 @@ void setup() {
     size(viewPanelWidth, viewPanelHeight);
     background(0);
     frame.setResizable(true);    //make frame is resizable
+    
+    //set universal font in this application
+    infoFont = createFont("Georgia", fontSize);
+    textFont(infoFont);
     
     //for camera properties
     camProperties = new CamProperties();
