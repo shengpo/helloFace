@@ -22,7 +22,9 @@ TODO list:
 	- 例如：目前所選擇的camera parameters
 [x] face-detection
 [ ] other opencv detection?
-[ ] OSC可設定remote address, 本程式local端osc port
+[ ] OSC可設定remote address, remote osc port, 本程式local端osc port
 [ ] OSC送出
 [ ] OSC接收
+[ ] 使用JSON來送osc message?
+[ ] 可儲存上一次的setting panel的設定
 [ ] 本程式操作/使用說明
