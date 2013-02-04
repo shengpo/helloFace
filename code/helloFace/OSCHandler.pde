@@ -8,8 +8,12 @@ public class OSCHandler {
 
 
 
-    public OSCHandler(PApplet papplet){
+    public OSCHandler(PApplet papplet, int localOscPort, String remoteAddress, int remoteOscPort){
         this.papplet = papplet;
+        this.localOscPort = localOscPort;
+        this.remoteAddress = remoteAddress;
+        this.remoteOscPort = remoteOscPort;
+        
         oscP5 = new OscP5(papplet, localOscPort);
         myRemoteLocation = new NetAddress(remoteAddress, remoteOscPort);
         
@@ -18,7 +22,9 @@ public class OSCHandler {
     }
     
 
+    //this function can be extended for send out other detecting results
     public void sendOut(Rectangle[] faceRect){
+        //send out face-detecting result
         if(faceRect!=null && faceRect.length>0){
             OscMessage myMessage = new OscMessage("/faceDetect");
             myMessage.add(faceRect.length);    //偵測到的face數量

@@ -86,7 +86,7 @@ void setup() {
     infoPanel = new InfoPanel(viewPanelWidth);
 
     //for OSC handler
-    oscHandler = new OSCHandler(this);
+//    oscHandler = new OSCHandler(this);
     
     //for garbage collector
     gc = new GarbageCollector(gcPeriodMinute);

@@ -16,8 +16,8 @@ void controlEvent(ControlEvent theEvent) {
                 println("[INFO] camera initialized !");
                 
                 //for detector
-                detector = null;    //漆除之前的detector
-                detector = new Detector(this, camProperties.getCamWidth(), camProperties.getCamHeight());
+                detector = null;    //清除之前的detector
+                detector = new Detector(this, camProperties.getCamWidth(), camProperties.getCamHeight(), detector.FACEDETECTION);    //設定做face detection
                 println("[INFO] detector initialized !");
             }
         }
