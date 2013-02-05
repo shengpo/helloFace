@@ -63,6 +63,9 @@ Detector detector = null;
 //for OSC handler
 OSCHandler oscHandler = null;
 
+//for initializer
+Initializer initializer = null;
+
 //for font (used in InfoPanel, SettingPanel)
 PFont infoFont = null;
 int fontSize = 12;
@@ -92,6 +95,10 @@ void setup() {
     
     //for info panel
     infoPanel = new InfoPanel(viewPanelWidth);
+    
+    //for Initializer
+    initializer = new Initializer();
+    initializer.loadDefaultSetting();
 
     //for garbage collector
     gc = new GarbageCollector(gcPeriodMinute);

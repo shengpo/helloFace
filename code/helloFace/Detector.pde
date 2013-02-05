@@ -36,6 +36,8 @@ public class Detector {
     }
     
     public PImage doDetect(PImage img){
+        if(img==null || img.width<=0 || img.height<=0) return null;    //避免處理null image或empty image
+        
         //copy image for further detections
         opencv.copy(img);
 

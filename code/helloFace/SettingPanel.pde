@@ -31,6 +31,9 @@ public class SettingPanel {
     
     
     private void setControllersLayout(){
+        /*TextFiled for camera params info*/
+        //...
+        
         /*DropdownList for camera list*/
         dropdownList = cp5.addDropdownList("cameraDropdownList")
                                .setSize(330, 100)
@@ -60,7 +63,8 @@ public class SettingPanel {
              .setSize(65, 15)
              .setColorBackground(color(60))
              .setInputFilter(Textfield.INTEGER)
-             .setFont(infoFont);
+             .setFont(infoFont)
+             .setAutoClear(false);
         
         /*TextFiled for remote address setting*/
         cp5.addTextfield("remoteAddressTextfield")
@@ -68,7 +72,8 @@ public class SettingPanel {
              .setPosition(viewPanelWidth+200, 150)
              .setSize(110, 15)
              .setColorBackground(color(60))
-             .setFont(infoFont);
+             .setFont(infoFont)
+             .setAutoClear(false);
 
         /*TextFiled for remote OSC port setting*/
         cp5.addTextfield("remoteOscPortTextfield")
@@ -77,13 +82,17 @@ public class SettingPanel {
              .setSize(65, 15)
              .setColorBackground(color(60))
              .setInputFilter(Textfield.INTEGER)
-             .setFont(infoFont);
+             .setFont(infoFont)
+             .setAutoClear(false);
         
         /*Bang for build OSC connection*/
-        cp5.addBang("connectBang")
-             .setCaptionLabel("build    OSC    connection")
+        cp5.addToggle("connectToggle")
+             .setCaptionLabel("Click    to    build    OSC    connection")
              .setPosition(viewPanelWidth+50, 185)
              .setSize(330, 20)
+             .setColorForeground(color(120, 135, 170))
+             .setColorBackground(color(100))
+             .setColorActive(color(150, 150, 170))
              .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
              
         /*TextFiled for osc connection info*/
