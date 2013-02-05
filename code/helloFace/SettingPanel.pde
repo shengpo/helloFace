@@ -33,7 +33,7 @@ public class SettingPanel {
     private void setControllersLayout(){
         /*DropdownList for camera list*/
         dropdownList = cp5.addDropdownList("cameraDropdownList")
-                               .setSize(250, 100)
+                               .setSize(330, 100)
                                .setPosition(viewPanelWidth+50, 50)
                                .setBackgroundColor(color(190))
                                .setColorBackground(color(60))
@@ -53,40 +53,40 @@ public class SettingPanel {
             }
         }
         
-        /*local OSC port setting*/
+        /*TextFiled for local OSC port setting*/
         cp5.addTextfield("localOscPortTextfield")
              .setCaptionLabel("local OSC port")
              .setPosition(viewPanelWidth+50, 150)
-             .setSize(50, 15)
+             .setSize(65, 15)
              .setColorBackground(color(60))
              .setInputFilter(Textfield.INTEGER)
              .setFont(infoFont);
         
-        /*remote address setting*/
+        /*TextFiled for remote address setting*/
         cp5.addTextfield("remoteAddressTextfield")
              .setCaptionLabel("remote address")
              .setPosition(viewPanelWidth+200, 150)
-             .setSize(100, 15)
+             .setSize(110, 15)
              .setColorBackground(color(60))
              .setFont(infoFont);
 
-        /*remote OSC port setting*/
+        /*TextFiled for remote OSC port setting*/
         cp5.addTextfield("remoteOscPortTextfield")
              .setCaptionLabel("remote OSC port")
-             .setPosition(viewPanelWidth+310, 150)
-             .setSize(50, 15)
+             .setPosition(viewPanelWidth+315, 150)
+             .setSize(65, 15)
              .setColorBackground(color(60))
              .setInputFilter(Textfield.INTEGER)
              .setFont(infoFont);
         
-        /*build OSC connection*/
+        /*Bang for build OSC connection*/
         cp5.addBang("connectBang")
              .setCaptionLabel("build    OSC    connection")
              .setPosition(viewPanelWidth+50, 185)
              .setSize(330, 20)
              .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
              
-        /*osc connection info*/
+        /*TextFiled for osc connection info*/
         cp5.addTextfield("oscConnectionInfoTextfield")
              .setCaptionLabel("OSC    connection    not    build")
              .setPosition(viewPanelWidth+50, 210)
@@ -96,6 +96,28 @@ public class SettingPanel {
              .setColorCaptionLabel(color(200, 0, 0))
              .setFont(infoFont)
              .setLock(true)
+             .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
+
+        /*TextFiled for setAsDefaultToggle info*/
+        cp5.addTextfield("setAsDefaultToggleInfoTextfield")
+             .setCaptionLabel("Set    Above    Setting    As    Default")
+             .setPosition(viewPanelWidth+50, 275)
+             .setSize(290, 20)
+             .setColorForeground(color(60))
+             .setColorBackground(color(0))
+             .setColorCaptionLabel(color(200))
+             .setFont(infoFont)
+             .setLock(true)
+             .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
+
+        /*Toggle for using current controllers' properties to boot helloFace application at next time*/
+        cp5.addToggle("setAsDefaultToggle")
+             .setCaptionLabel("YES        NO")
+             .setPosition(viewPanelWidth+340, 275)
+             .setSize(60, 20)
+             .setColorBackground(color(60))
+             .setColorActive(color(0, 200, 0))
+             .setMode(ControlP5.SWITCH)
              .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
     }
     
