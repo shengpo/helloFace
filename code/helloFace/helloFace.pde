@@ -13,7 +13,7 @@
  ----------------
  * 按s/S鍵, 可以switch on/off 設定面板
  * 按i/I鍵, 可以switch on/off 資訊面板
- * 按v/IV, 可以switch on/off 偵測到的視覺資訊
+ * 按v/V, 可以switch on/off 偵測到的視覺資訊
  
  
  Used libraries:
@@ -93,9 +93,6 @@ void setup() {
     //for info panel
     infoPanel = new InfoPanel(viewPanelWidth);
 
-    //for OSC handler
-//    oscHandler = new OSCHandler(this);
-    
     //for garbage collector
     gc = new GarbageCollector(gcPeriodMinute);
     gc.start();

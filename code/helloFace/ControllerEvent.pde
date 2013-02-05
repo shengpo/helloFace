@@ -5,7 +5,7 @@ void controlEvent(ControlEvent theEvent) {
         // check if the Event was triggered from a ControlGroup
         println("event from group : "+theEvent.getGroup().getValue()+" from "+theEvent.getGroup());
 
-        //DropdownList: cameraList
+        //DropdownList: cameraDropdownList
         if(theEvent.getName().equals("cameraDropdownList")){
             String[] camlist = camProperties.getAvailableList();
             if(camlist != null){
@@ -23,6 +23,34 @@ void controlEvent(ControlEvent theEvent) {
         }
     } else if (theEvent.isController()) {
         println("event from controller : "+theEvent.getController().getValue()+" from "+theEvent.getController());
+        
+        //Bang: connectBang
+        if(theEvent.getName().equals("connectBang")){
+            int localOscPort = int(settingPanel.getControlP5().get(Textfield.class, "localOscPortTextfield").getText());
+            String remoteAddress = settingPanel.getControlP5().get(Textfield.class, "remoteAddressTextfield").getText();
+            int remoteOscPort =  int(settingPanel.getControlP5().get(Textfield.class, "remoteOscPortTextfield").getText());
+            
+            println("[INO] localOscPort: "+localOscPort);
+            println("[INO] remoteAddress: "+remoteAddress);
+            println("[INO] remoteOscPort: "+remoteOscPort);
+            
+            if(localOscPort>0 && !remoteAddress.equals("") && remoteOscPort>0){
+                //for OSC handler
+                if(oscHandler != null){    //清除之前的oscHandler
+                    oscHandler.stop();
+                    oscHandler = null;    
+                }
+                oscHandler = new OSCHandler(this, localOscPort, remoteAddress, remoteOscPort);
+                println("[INFO]  OSC Handler is intialized !");
+                
+                //set osc connection info
+                settingPanel.getControlP5().get(Textfield.class, "oscConnectionInfoTextfield").setCaptionLabel("OSC    connection    OK");
+            }else{
+                println("[INFO]  OSC related parameters could be wrong, please check it again");
+                //set osc connection info
+                settingPanel.getControlP5().get(Textfield.class, "oscConnectionInfoTextfield").setCaptionLabel("OSC    paramteres    could    be    wrong,    please    check");
+            }
+        }
     }
 }
 

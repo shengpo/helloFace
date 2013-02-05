@@ -54,6 +54,11 @@ public class OSCHandler {
         return remoteOscPort;
     }
     
+    //stop oscP5 and close open Sockets.    (避免重啟oscP5時佔用相同的local port)
+    public void stop(){
+        if(oscP5 != null)    oscP5.stop();
+    }
+    
 
     public void test(int theA, int theB) {
         println("### plug event method. received a message /test.");

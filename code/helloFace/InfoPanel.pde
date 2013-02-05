@@ -18,11 +18,11 @@ public class InfoPanel {
             /*list infos*/
             fill(255, 255, 0);
             //local OSC port
-            text("[ Local OSC port ] 12000", 10, viewPanelHeight-fontSize*3.3);
+            text("[ Local OSC port ] " + (oscHandler!=null ? oscHandler.getLocalOscPort() : ""), 10, viewPanelHeight-fontSize*3.3);
             //remote address and OSC port
-            text("[ Remote ] 127.0.0.1:12001", 10, viewPanelHeight-fontSize*2.3);
+            text("[ Remote ] " + (oscHandler!=null ? oscHandler.getRemoteAddress() : "") + ":" + (oscHandler!=null ? oscHandler.getRemoteOscPort() : ""), 10, viewPanelHeight-fontSize*2.3);
             //detecting type
-            text("[ Detecting Type ] "+(detector!=null ? detector.getDetectionTypeName() : ""), 10, viewPanelHeight-fontSize*1.3);
+            text("[ Detecting Type ] " + (detector!=null ? detector.getDetectionTypeName() : ""), 10, viewPanelHeight-fontSize*1.3);
             //selected camera params
             text("[ Cam ] "+camProperties.getSelectedCamera(), 10, viewPanelHeight-fontSize*0.3);
         }

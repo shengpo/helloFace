@@ -15,7 +15,7 @@ public class SettingPanel {
         
         //controllers
         cp5 = new ControlP5(papplet);
-        setControllers();
+        setControllersLayout();
     }
     
     public void switchOnOff(){
@@ -30,7 +30,7 @@ public class SettingPanel {
     }
     
     
-    private void setControllers(){
+    private void setControllersLayout(){
         /*DropdownList for camera list*/
         dropdownList = cp5.addDropdownList("cameraDropdownList")
                                .setSize(250, 100)
@@ -97,5 +97,10 @@ public class SettingPanel {
              .setFont(infoFont)
              .setLock(true)
              .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
+    }
+    
+    
+    public ControlP5 getControlP5(){
+        return cp5;
     }
 }
