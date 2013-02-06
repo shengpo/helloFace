@@ -30,7 +30,7 @@ TODO list:
 [X] setting panel能左右伸縮: 
 	- 向右伸長後, 長出設定選項, 進入設定模式
 	- 向左縮回後，便結束設定模式
-[-] 增加infoPanel, 放在viewPanel上，顯示一些資訊
+[X] 增加infoPanel, 放在viewPanel上，顯示一些資訊
 	- 主要是當setting panel收起來時，提供一些資訊
 	- 例如：目前所選擇的camera parameters
 [X] face-detection
@@ -41,8 +41,10 @@ TODO list:
 [ ] 使用JSON來送osc message?
 [X] 可儲存上一次的setting panel的設定
 [ ] 可刪除之前的設定檔?
+[ ] 將s/S, i/I, v/V件改成controller
 [X] 只要更動camera, osc設定就將下方toggle設成false
 [X] 建立osc connection後, 將osc-related textfield lock
 [ ] 設定.ignore file過濾設定檔
 [ ] 寫一個helloFace的範例client程式
 [ ] 本程式操作/使用說明
+
