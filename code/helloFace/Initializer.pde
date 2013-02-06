@@ -17,9 +17,12 @@ public class Initializer {
         
         if(isValidFile && state!=null){
             println("[INFO] initiallized successfully !");
+            
+            //change deleteDefaultSettingFileBang caption label
+            settingPanel.getControlP5().get(Bang.class, "deleteDefaultSettingFileBang").setCaptionLabel("Delete    Default    Setting    Files");
         }
         if(!isValidFile){
-            println("[INFO] default setting file (settings.ser) is not existed");
+            println("[INFO] default setting file (defaultSettings.ser) is not existed");
         }
         if(state == null){
             println("[INFO] default setting file (connectToggleState.hack) is not existed");

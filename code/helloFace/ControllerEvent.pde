@@ -33,6 +33,9 @@ void controlEvent(ControlEvent theEvent) {
                 }
                 
                 println("[INFO] current controllers' state are used as default settings");
+
+                //change deleteDefaultSettingFileBang caption label
+                settingPanel.getControlP5().get(Bang.class, "deleteDefaultSettingFileBang").setCaptionLabel("Delete    Default    Setting    Files");
             }
         }
     }
@@ -115,6 +118,35 @@ void controlEvent(ControlEvent theEvent) {
 
             //set osc connection info
             settingPanel.getControlP5().get(Textfield.class, "oscConnectionInfoTextfield").setCaptionLabel("OSC    paramteres    could    be    wrong,    please    check");
+        }
+    }
+        
+    //Bang: deleteDefaultSettingFileBang
+    if(theEvent.getName().equals("deleteDefaultSettingFileBang")){
+        int deleteCount = 0;
+        
+        //delete default setting files: data資料夾下的defaultSettings.ser檔 和 connectToggleState.hack檔
+        File settingFile1 = new File(dataPath("")+"/defaultSettings.ser");
+        if(settingFile1.delete() == true){
+            println("[INFO] default setting file (defaultSettings.ser) is deleted");
+            deleteCount = deleteCount + 1;
+        }else{
+            println("[INFO] default setting file (defaultSettings.ser) can not be deleted. It could be not existed or permission issue");
+        }
+
+        File settingFile2 = new File(dataPath("")+"/connectToggleState.hack");
+        if(settingFile2.delete() == true){
+            println("[INFO] default setting file (connectToggleState.hack) is deleted");
+            deleteCount = deleteCount + 1;
+        }else{
+            println("[INFO] default setting file (connectToggleState.hack) can not be deleted. It could be not existed or permission issue");
+        }
+
+        if(deleteCount == 2){
+            //change deleteDefaultSettingFileBang caption label
+            theEvent.getController().setCaptionLabel("No    Default    Setting    Files");            
+            //將setAsDefaultToggle設成false
+            settingPanel.getControlP5().get(Toggle.class, "setAsDefaultToggle").setValue(false);
         }
     }
 }

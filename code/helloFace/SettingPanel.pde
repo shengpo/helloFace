@@ -137,6 +137,15 @@ public class SettingPanel {
              .setColorActive(color(0, 200, 0))
              .setMode(ControlP5.SWITCH)
              .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
+
+        /*Bang: deleteDefaultSettingFileBang*/  //ps. Bang在做controller snapshop時會被忽略掉
+        cp5.addBang("deleteDefaultSettingFileBang")
+         .setCaptionLabel("No    Default    Setting    Files")
+         .setPosition(viewPanelWidth+250, 0)
+         .setSize(150, 15)
+         .setColorForeground(color(80, 0, 0))
+         .setColorActive(color(200, 0, 0))
+         .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
     }
     
     
