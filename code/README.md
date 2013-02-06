@@ -9,6 +9,7 @@ Instruction:
 	- 可選擇/設定camera參數
 	- 可設定OSC相關參數
 	- 可設定是否將目前的設定作為預設值 (下次開啟helloFace程式便直接使用)
+	- 可刪除已有的預設設定檔
 - 按i/I鍵, 可以switch on/off 資訊面板
 - 按v/V, 可以switch on/off 偵測到的視覺資訊
 	- 無論是否秀出視覺資訊，都仍會送出偵測的OSC message
@@ -40,8 +41,8 @@ TODO list:
 [ ] OSC接收
 [ ] 使用JSON來送osc message?
 [X] 可儲存上一次的setting panel的設定
-[ ] 可刪除之前的設定檔?
-[ ] 將s/S, i/I, v/V件改成controller
+[X] 可刪除之前的設定檔
+[ ] 將s/S, i/I, v/V鍵改成controller
 [X] 只要更動camera, osc設定就將下方toggle設成false
 [X] 建立osc connection後, 將osc-related textfield lock
 [ ] 設定.ignore file過濾設定檔
