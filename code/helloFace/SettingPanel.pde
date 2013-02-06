@@ -32,7 +32,16 @@ public class SettingPanel {
     
     private void setControllersLayout(){
         /*TextFiled for camera params info*/
-        //...
+        cp5.addTextfield("cameraSelectTextfield")
+             .setCaptionLabel("Select    Camera :")
+             .setPosition(viewPanelWidth+50, 10)
+             .setSize(330, 15)
+             .setColorForeground(color(0))
+             .setColorBackground(color(0))
+             .setColorCaptionLabel(color(200))
+             .setFont(infoFont)
+             .setLock(true)
+             .getCaptionLabel().align(ControlP5.LEFT, ControlP5.CENTER);
         
         /*DropdownList for camera list*/
         dropdownList = cp5.addDropdownList("cameraDropdownList")
