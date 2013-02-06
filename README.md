@@ -44,16 +44,16 @@ How to use helloFace:
 	- always send out OSC messages of detecting result, whether the visual hints is on or off
 
 ####about helloFace client app
-you can use any language or tools that support OSC protocol to build a OSC connection with **helloFace app**.
-, and then you can get the OSC messages about detected results from **helloFace**.
-in the future, you also can send OSC message to **helloFace** for advanced using.
+you can use any language or tools that support OSC protocol to build a OSC connection with **helloFace app**.<br/>
+, and then you can get the OSC messages about detected results from **helloFace**.<br/>
+in the future, you also can send OSC message to **helloFace** for advanced using.<br/>
 (Client Examples will be provided in the future.)
 
 
 
 About OSC message:
 ------------------
-- helloFace app send **OUT**
+- helloFace send **OUT**
 	- OSC message about *face-detection*
 		- address pattern : `/faceDetect`
 		- type tag: `is`
@@ -61,7 +61,7 @@ About OSC message:
 			- s: list of detected faces' ranges (rectangle range). Format is `x=0,y=0,w=30,h=30|x=10,y=10,w=60,h=60|...`（and so on），every face range is separated by **|** , every face range (rectangle range) is consist of 4 numbers: **x** stands for the x position of top-left corner of rectangle, **y** stands for the y position of top-left corner of rectangle, **w** stands for the width of rectangle, **h** stands for the height of rectangle
 		- Example: `/faceDetect 2 x=310,y=166,w=149,h=149|x=314,y=149,w=159,h=159`
 
-- helloFace app receive **IN**
+- helloFace receive **IN**
 	. not implemented currently
 
 
