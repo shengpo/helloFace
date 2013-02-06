@@ -45,11 +45,8 @@ How to use helloFace:
 
 ####about helloFace client app
 you can use any language or tools that support OSC protocol to build a OSC connection with **helloFace app**.
-
 , and then you can get the OSC messages about detected results from **helloFace**.
-
 in the future, you also can send OSC message to **helloFace** for advanced using.
-
 (Client Examples will be provided in the future.)
 
 
