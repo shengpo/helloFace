@@ -5,24 +5,29 @@
  
  Functions:
  ---------------
- * using OSC to send out the result of face-detection
- * also receive OSC message for dynamic settings
- * providing GUI for simple setting and easy using
+ - using OSC to send out the result of face-detection
+ - also receive OSC message for dynamic settings
+ - providing GUI for simple setting and easy using
  
  Instruction:
  ----------------
- * 按s/S鍵, 可以switch on/off 設定面板
- * 按i/I鍵, 可以switch on/off 資訊面板
- * 按v/V, 可以switch on/off 偵測到的視覺資訊
+ - 按s/S鍵, 可以switch on/off 設定面板
+ - 按i/I鍵, 可以switch on/off 資訊面板
+ - 按v/V, 可以switch on/off 偵測到的視覺資訊
  
  
  Used libraries:
  ---------------------
- * Processing Video library (version: 2.0b7)
- * oscP5 (version: 0.9.8)
- * controlP5 (version: 2.0.4)
- * javacvPro (version: 0.5)
+ - Processing Video library (version: 2.0b7)
+ - oscP5 (version: 0.9.8)
+ - controlP5 (version: 2.0.4)
+ - javacvPro (version: 0.5)
  
+ 
+ Development Environment:
+ --------------------------------------
+ Processing 2.0b7
+
  
  Author: 
  -----------
