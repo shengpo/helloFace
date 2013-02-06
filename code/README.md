@@ -45,7 +45,7 @@ TODO list:
 [ ] 將s/S, i/I, v/V鍵改成controller
 [X] 只要更動camera, osc設定就將下方toggle設成false
 [X] 建立osc connection後, 將osc-related textfield lock
-[ ] 設定.ignore file過濾設定檔
+[X] 設定.gitignore file過濾設定檔
 [ ] 寫一個helloFace的範例client程式
 [ ] 本程式操作/使用說明
 
