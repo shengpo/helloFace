@@ -61,18 +61,20 @@ About OSC message:
 	- type tag：`ii`
 		- i: first one stands for camera's width
 		- i: second one stands for camera's height
+	- Example：`/returnCamRes 640 480`
 
 - about responding camera's FPS
 	- address pattern：`/returnCamFps`
 	- type tag：`i`
 		- i: stands for camera's FPS (frame per second)
+	- Example：`/returnCamFps 30`
 
 - about *face-detection*
 	- address pattern : `/faceDetect`
 	- type tag: `is`
 		- i: total count of detected faces
 		- s: list of detected faces' ranges (rectangle range). Format is `x=0.4640625,y=0.47083333,w=0.1828125,h=0.24375|x=0.4453125,y=0.35416666,w=0.2484375,h=0.33125|...`（and so on），every face range is separated by **|** , every face range (rectangle range) is consist of 4 numbers (every value is normalized，value is between0 and 1): **x** stands for the x position of top-left corner of rectangle, **y** stands for the y position of top-left corner of rectangle, **w** stands for the width of rectangle, **h** stands for the height of rectangle
-	- Example: `/faceDetect 2 x=0.525,y=0.52708334,w=0.09375,h=0.125|x=0.4421875,y=0.36875,w=0.2484375,h=0.33125`
+	- Example：`/faceDetect 2 x=0.525,y=0.52708334,w=0.09375,h=0.125|x=0.4421875,y=0.36875,w=0.2484375,h=0.33125`
 
 
 ####helloFace receive [ IN ]
