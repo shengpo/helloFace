@@ -75,5 +75,7 @@ TODO list:
 [X] 設定.gitignore file過濾設定檔
 [X] 將偵測到的範圍normalize, 以利不同視窗大小的client使用
 [X] 寫一個helloFace的範例client程式
-[ ] 本程式操作/使用說明
+[X] 本程式操作/使用說明
+[ ] 翻轉camera畫面的功能(上下翻轉, 左右翻轉)
+[ ] helloFace網頁
 
