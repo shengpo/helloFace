@@ -18,12 +18,34 @@ Instruction:
 
 OSC message (send out):
 -----------------------
+- 回覆camera解析度的OSC message
+	- address pattern：`/returnCamRes`
+	- type tag：`ii`
+		- i: 第一個表示camera的寬度(width)
+		- i: 第二個表示camera的高度(height)
+- 回覆camera FPS數值的OSC message
+	- address pattern：`/returnCamFps`
+	- type tag：`i`
+		- i: 表示camera的FPS (frame per second)
 - 人臉偵測的OSC message
 	- address pattern : `/faceDetect`
-	- type tag: `is`
+	- type tag：`is`
 		- i: 表示偵測到的人臉數量
-		- s: 偵測到的人臉範圍串列, 格式為 `x=0,y=0,w=30,h=30|x=10,y=10,w=60,h=60|...`（以此類推），每個人臉範圍以符號 **|** 相隔開, 每個人臉範圍(為一個矩型)由4個數值構成: x表示矩型的左上角x座標, y表示矩型的左上角y座標, w表示矩型的寬度, h表示矩型的高度
-	- 範例: `/faceDetect 2 x=310,y=166,w=149,h=149|x=314,y=149,w=159,h=159`
+		- s: 偵測到的人臉範圍串列, 格式為 `x=0.4640625,y=0.47083333,w=0.1828125,h=0.24375|x=0.4453125,y=0.35416666,w=0.2484375,h=0.33125|...`（以此類推），每個人臉範圍以符號 **|** 相隔開, 每個人臉範圍(為一個矩型)由4個數值構成(每個數值為標準化之後的數值，介於0~1之間): x表示矩型的左上角x座標, y表示矩型的左上角y座標, w表示矩型的寬度, h表示矩型的高度
+	- 範例: `/faceDetect 2 x=0.525,y=0.52708334,w=0.09375,h=0.125|x=0.4421875,y=0.36875,w=0.2484375,h=0.33125`
+
+
+
+OSC message (receive in):
+-------------------------
+- 接收詢問camera解析度的OSC message
+	- address pattern：`/queryCamRes`
+	- type tag：無
+- 接收詢問camera FPS數值的OSC message
+	- address pattern：`/queryCamFps`
+	- type tag：無
+
+
 
 
 TODO list:
@@ -38,7 +60,9 @@ TODO list:
 [ ] other opencv detection?
 [X] OSC可設定remote address, remote osc port, 本程式local端osc port
 [X] OSC送出
-[ ] OSC接收
+[X] OSC接收
+	- 例如接收/queryCamRes, 回傳returnCamRes
+	- 例如接收/queryCamFps, 回傳returnCamFps
 [ ] 使用JSON來送osc message?
 [X] 可儲存上一次的setting panel的設定
 [X] 可刪除之前的設定檔
@@ -46,6 +70,7 @@ TODO list:
 [X] 只要更動camera, osc設定就將下方toggle設成false
 [X] 建立osc connection後, 將osc-related textfield lock
 [X] 設定.gitignore file過濾設定檔
-[ ] 寫一個helloFace的範例client程式
+[X] 將偵測到的範圍normalize, 以利不同視窗大小的client使用
+[X] 寫一個helloFace的範例client程式
 [ ] 本程式操作/使用說明
 
