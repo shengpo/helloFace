@@ -10,8 +10,8 @@ helloFace is a face-detection tool which aims on simple setting and easy using.
 
 Functions:
 ----------
-- using [OSC](http://archive.cnmat.berkeley.edu/OpenSoundControl/) to send out the result of face-detection
-- also receive [OSC](http://archive.cnmat.berkeley.edu/OpenSoundControl/) message for dynamic settings (not implemented currently)
+- using [OSC](http://archive.cnmat.berkeley.edu/OpenSoundControl/) to send out the result of face-detection or to response query
+- also receive [OSC](http://archive.cnmat.berkeley.edu/OpenSoundControl/) message for dynamic settings or query
 - providing GUI for simple setting and easy using
 
 
@@ -45,24 +45,44 @@ How to use helloFace:
 
 ####about helloFace client app
 you can use any language or tools that support OSC protocol to build a OSC connection with **helloFace app**.<br/>
-, and then you can get the OSC messages about detected results from **helloFace**.<br/>
+, and then you can get the OSC messages about results of detecting faces or your query from **helloFace**.<br/>
 in the future, you also can send OSC message to **helloFace** for advanced using.<br/>
-(Client Examples will be provided in the future.)
 
+####download helloFace client Examples
+now some exanples are provided, you can download for testing and get more understanding about **helloFace**
+- [Processing examples](https://github.com/shengpo/helloFace/raw/master/clientExamples/ProcessingExample.zip)
 
 
 About OSC message:
 ------------------
 - helloFace send **OUT**
-	- OSC message about *face-detection*
+	- about responding camera's resolution
+		- address pattern：`/returnCamRes`
+		- type tag：`ii`
+			- i: first one stands for camera's width
+			- i: second one stands for camera's height
+
+	- about responding camera's FPS
+		- address pattern：`/returnCamFps`
+		- type tag：`i`
+			- i: stands for camera's FPS (frame per second)
+
+	- about *face-detection*
 		- address pattern : `/faceDetect`
 		- type tag: `is`
 			- i: total count of detected faces
-			- s: list of detected faces' ranges (rectangle range). Format is `x=0,y=0,w=30,h=30|x=10,y=10,w=60,h=60|...`（and so on），every face range is separated by **|** , every face range (rectangle range) is consist of 4 numbers: **x** stands for the x position of top-left corner of rectangle, **y** stands for the y position of top-left corner of rectangle, **w** stands for the width of rectangle, **h** stands for the height of rectangle
-		- Example: `/faceDetect 2 x=310,y=166,w=149,h=149|x=314,y=149,w=159,h=159`
+			- s: list of detected faces' ranges (rectangle range). Format is `x=0.4640625,y=0.47083333,w=0.1828125,h=0.24375|x=0.4453125,y=0.35416666,w=0.2484375,h=0.33125|...`（and so on），every face range is separated by **|** , every face range (rectangle range) is consist of 4 numbers (every value is normalized，value is between0 and 1): **x** stands for the x position of top-left corner of rectangle, **y** stands for the y position of top-left corner of rectangle, **w** stands for the width of rectangle, **h** stands for the height of rectangle
+		- Example: `/faceDetect 2 x=0.525,y=0.52708334,w=0.09375,h=0.125|x=0.4421875,y=0.36875,w=0.2484375,h=0.33125`
+
 
 - helloFace receive **IN**
-	. not implemented currently
+	- about receiving query of camera's resolution
+		- address pattern：`/queryCamRes`
+		- type tag：none
+
+	- about receiving query of camera's FPS
+		- address pattern：`/queryCamFps`
+		- type tag：none
 
 
 
