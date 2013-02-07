@@ -23,10 +23,12 @@ OSC message (send out):
 	- type tag：`ii`
 		- i: 第一個表示camera的寬度(width)
 		- i: 第二個表示camera的高度(height)
+
 - 回覆camera FPS數值的OSC message
 	- address pattern：`/returnCamFps`
 	- type tag：`i`
 		- i: 表示camera的FPS (frame per second)
+
 - 人臉偵測的OSC message
 	- address pattern : `/faceDetect`
 	- type tag：`is`
@@ -41,6 +43,7 @@ OSC message (receive in):
 - 接收詢問camera解析度的OSC message
 	- address pattern：`/queryCamRes`
 	- type tag：無
+
 - 接收詢問camera FPS數值的OSC message
 	- address pattern：`/queryCamFps`
 	- type tag：無
