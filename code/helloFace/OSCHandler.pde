@@ -18,7 +18,9 @@ public class OSCHandler {
         myRemoteLocation = new NetAddress(remoteAddress, remoteOscPort);
         
         //add plugs (plug to this object's function!) for receive OSC message from outside
-        oscP5.plug(this, "test", "/test");
+        oscP5.plug(this, "queryCamRes", "/queryCamRes");    //query for camera's resolution (camera's width and height)
+        oscP5.plug(this, "queryCamFps", "/queryCamFps");    //query for camera's FPS
+        //others add here ...
     }
     
 
@@ -66,8 +68,24 @@ public class OSCHandler {
     }
     
 
-    public void test(int theA, int theB) {
-        println("### plug event method. received a message /test.");
-        println(" 2 ints received: "+theA+", "+theB);  
+    /*following methods are for responding to coming OSC from outside*/
+
+    //query for camera's resolution (camera's width and height)
+    public void queryCamRes() {
+        //return camera resolution
+        OscMessage myMessage = new OscMessage("/returnCamRes");
+        myMessage.add(camProperties.getCamWidth());
+        myMessage.add(camProperties.getCamHeight());
+        oscP5.send(myMessage, myRemoteLocation); 
     }
+    
+    //query for camera's FPS 
+    public void queryCamFps() {
+        //return camera FPS
+        OscMessage myMessage = new OscMessage("/returnCamFps");
+        myMessage.add(camProperties.getCamFPS());
+        oscP5.send(myMessage, myRemoteLocation); 
+    }
+
+    //other responding methods add here ...
 }

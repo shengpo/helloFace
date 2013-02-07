@@ -5,7 +5,7 @@
  
  Functions:
  ---------------
- - using OSC to send out the result of face-detection
+ - using OSC to send out the result of face-detection  or to response query
  - also receive OSC message for dynamic settings or querying
  - providing GUI for simple setting and easy using
  
