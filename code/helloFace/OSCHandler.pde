@@ -32,12 +32,18 @@ public class OSCHandler {
             //集合偵測到的人臉資訊
             String facelist = "";
             for(int i=0; i<faceRect.length; i++){
-                facelist = facelist + "x=" +faceRect[i].x + ",y=" + faceRect[i].y + ",w=" + faceRect[i].width + ",h=" + faceRect[i].height;
+                //normalizing values
+                float x = faceRect[i].x/float(camProperties.getCamWidth());
+                float y = faceRect[i].y/float(camProperties.getCamHeight());
+                float w = faceRect[i].width/float(camProperties.getCamWidth());
+                float h = faceRect[i].height/float(camProperties.getCamHeight());
+                facelist = facelist + "x=" + x + ",y=" + y + ",w=" + w + ",h=" + h;
                 if(i < faceRect.length-1){
                     facelist = facelist + "|";
                 }
             }
-            
+
+            //println("[OSC out] /faceDetect "+ faceRect.length +" " + facelist);            
             myMessage.add(facelist);    //偵測到的face矩型數據串
             oscP5.send(myMessage, myRemoteLocation); 
         }
