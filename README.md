@@ -20,9 +20,9 @@ How to install:
 1. install ***GStreamer framework*** on your platform ([reference](http://wiki.processing.org/w/Video_Issues))
 	- make sure that you can run video-related examples in Processing 2.x (if you can, that means you install GStreamer framework already.)
 2. install ***OpenCV 2*** on your platform ([reference](http://codeanticode.wordpress.com/2011/11/21/opencv-2-in-processing/))
-	- windows
-	- Mac ([中文參考](http://shenshengpo.blogspot.tw/2013/01/macprocessing-opencv-2.html))
-	- Linux ([中文參考](http://shenshengpo.blogspot.tw/2013/01/ubuntu-processing-opencv-2.html))
+	- windows ([中文參考](http://shengpo.logdown.com/posts/69934-processing-opencv-2-on-windows))
+	- Mac ([中文參考](http://shengpo.logdown.com/posts/32578-mac-processing-opencv-2))
+	- Linux ([中文參考](http://shengpo.logdown.com/posts/32579-ubuntu-processing-opencv-2))
 3. download, unzip adn run ***helloFace app*** from links below:
 	- [Linux (32bit)](https://github.com/shengpo/helloFace/raw/master/apps/linux32/helloFace_linux32.zip)
 	- [Linux (64bit)](https://github.com/shengpo/helloFace/raw/master/apps/linux64/helloFace_linux64.zip)
